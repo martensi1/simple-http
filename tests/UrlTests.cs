@@ -1,4 +1,4 @@
-using AviationLib.Http;
+using PilotAppLib.Http;
 using System;
 using Xunit;
 
