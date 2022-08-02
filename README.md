@@ -18,7 +18,7 @@ using (var client = new SimpleHttp())
 Install with NuGet:
 
 ```
-dotnet add package PilotAppLib.SimpleHttp
+dotnet add package PilotAppLibs.SimpleHttp
 ```
 
 ## Documentation
