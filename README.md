@@ -21,9 +21,9 @@ Install with NuGet:
 dotnet add package PilotAppLibs.SimpleHttp
 ```
 
-## Documentation
+## License
 
-Learn how to use by reading the [documentation](https://martensi1.gitlab.io/aviation-libraries/simple-http/index.html)
+This repository is licensed with the [MIT](LICENSE) license
 
 ## Author
 
