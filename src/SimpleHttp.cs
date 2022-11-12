@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace PilotAppLib.Http
 {
@@ -98,9 +99,23 @@ namespace PilotAppLib.Http
                 request.Headers.Add("Accept", acceptHeader);
 
                 var task = _httpClient.SendAsync(request);
-                var content = ProcessAndReadResponse(task.Result);
+
+                var response = WaitForTask(task);
+                var content = ProcessAndReadResponse(response);
 
                 return content;
+            }
+        }
+        
+        private HttpResponseMessage WaitForTask(Task<HttpResponseMessage> responseTask)
+        {
+            try
+            {
+                return responseTask.Result;
+            }
+            catch (AggregateException ex)
+            {
+                throw ex.InnerException;
             }
         }
 
